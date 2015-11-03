@@ -1,4 +1,5 @@
 # coding: utf-8
+
 import sys
 import subprocess
 import glob
@@ -263,7 +264,8 @@ class VirtualenvKeeper(object):
             "creating new virtualenv on %s" % self.full_new_virtualenv_path)
         retval = subprocess.call(
             [
-                self.make_cmd, "-e", "VENV_DIR=%s" % self.full_new_virtualenv_path,
+                self.make_cmd,
+                "-e", "VENV_DIR=%s" % self.full_new_virtualenv_path,
                 self.make_venv_cmd,
                 "requirements",
                 "relocatable"
